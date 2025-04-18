@@ -1,0 +1,26 @@
+name: Python Test
+
+on:
+  push:
+    branches: [ "main" ]  # リポジトリのメインブランチ名に合わせて変更（例: master）
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v3
+
+      - name: Pythonをセットアップ
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'  # 使用しているPythonバージョンに合わせてOK
+
+      - name: pipをアップグレード
+        run: python -m pip install --upgrade pip
+
+      - name: テストを実行
+        run: python test_calc.py
