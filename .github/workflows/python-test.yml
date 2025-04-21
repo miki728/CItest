@@ -36,7 +36,6 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
     environment:
       name: production
-  
 
     steps:
         - name: Checkout
