@@ -34,6 +34,9 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'workflow_dispatch' }}
+    environment:
+      name: production
+  
 
     steps:
         - name: Checkout
