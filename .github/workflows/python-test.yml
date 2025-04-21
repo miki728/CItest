@@ -30,7 +30,7 @@ jobs:
       - name: Pytestでテスト実行
         run: pytest
 
-  manual-approval:
+  manual-approval2:
     needs: test
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request' }}
