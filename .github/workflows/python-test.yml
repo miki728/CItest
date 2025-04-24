@@ -51,5 +51,8 @@ jobs:
             python -m pip install --upgrade pip
             pip install -r requirements.txt
 
-        - name: Run tests again（マージ前に念のためテスト）
+        - name: Run tests1 again（マージ前に念のためテスト）
+          run: pylint calc.py
+
+        - name: Run tests2 again（マージ前に念のためテスト）
           run: pytest
